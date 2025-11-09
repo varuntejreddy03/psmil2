@@ -5,21 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Redirecting...</title>
   <script>
-    // 🔗 Update YouTube links here anytime
+    // 🎯 Central redirect list — update anytime
     const redirects = {
-      "varun": "https://youtu.be/sfgGjT9KV0w?si=gGXDQoYW6Fjdwk65",
-      "sreeker": "https://youtu.be/XXXXXXXXXXX",
-      "bharath": "https://youtu.be/XXXXXXXXXXX",
-      "divija": "https://youtu.be/XXXXXXXXXXX",
-      "prasanna": "https://youtu.be/XXXXXXXXXXX",
-      "parley": "https://youtu.be/XXXXXXXXXXX"
+      sreeker:  { url: 'https://www.youtube.com/embed/kTtknMiwobY?si=yXGX4JQxS5gpMz1M', label: 'Sai Sreeker Video' },
+      achsah:   { url: 'https://www.youtube.com/embed/TTB3A8BSTyE?si=dIsEndV9ixm362s9', label: 'M Achsah Pearly Video' },
+      bharath:  { url: 'https://www.youtube.com/embed/D2oXqJaMgrA', label: 'K Bharath Kumar Reddy Video' },
+      divija:   { url: 'https://www.youtube.com/embed/rtRbMppsDAQ?si=uEciYZ8dxPffI5G8', label: 'I Divija Reddy Video' },
+      prasanna: { url: 'https://www.youtube.com/embed/jEPR2EAEC_8?si=JwX2L7DKeFBD7czA', label: 'J Prasanna Video' },
+      varun:    { url: 'https://www.youtube.com/embed/dMO6G1XSLiQ?si=jMSrmdoqrAk83HWT', label: 'Varun Tej Reddy Video' }
     };
 
     const path = window.location.pathname.replace(/^\/+|\/+$/g, "").toLowerCase();
 
-    // Immediately redirect if found
+    // ⚡ Instant redirect
     if (redirects[path]) {
-      window.location.replace(redirects[path]);
+      window.location.replace(redirects[path].url);
     } else {
       document.addEventListener("DOMContentLoaded", () => {
         document.body.innerHTML = `
