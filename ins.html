@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Redirecting...</title>
   <script>
-    // 🔗 Central video redirect list (update these YouTube links anytime)
+    // 🔗 Update YouTube links here
     const redirects = {
-      "varun": "https://youtu.be/sfgGjT9KV0w?si=gGXDQoYW6Fjdwk65",  // Example
-      "sreeker": "https://youtu.be/XXXXXXXXXXX",  // Update later
+      "varun": "https://youtu.be/sfgGjT9KV0w?si=gGXDQoYW6Fjdwk65",
+      "sreeker": "https://youtu.be/XXXXXXXXXXX",
       "bharath": "https://youtu.be/XXXXXXXXXXX",
       "divija": "https://youtu.be/XXXXXXXXXXX",
       "prasanna": "https://youtu.be/XXXXXXXXXXX",
       "parley": "https://youtu.be/XXXXXXXXXXX"
     };
 
-    // Get path (e.g. /varun -> "varun")
+    // Get the path (e.g. /varun → "varun")
     const path = window.location.pathname.replace(/^\/+|\/+$/g, "").toLowerCase();
 
-    // Redirect or show fallback message
     window.onload = () => {
       if (redirects[path]) {
-        window.location.href = redirects[path];
+        document.body.innerHTML = `<h2 style="text-align:center;margin-top:20vh;font-family:Arial;">Redirecting ${path}’s video...</h2>`;
+        setTimeout(() => {
+          window.location.href = redirects[path];
+        }, 800);
       } else {
         document.body.innerHTML = `
-          <h2 style="font-family:Arial;text-align:center;margin-top:20vh;">
-            🚀 Redirect link not found.<br>
-            Please check the URL.
+          <h2 style="text-align:center;margin-top:20vh;font-family:Arial;">
+            🚀 Redirect link not found.<br>Please check the URL.
           </h2>`;
       }
     };
@@ -34,7 +35,7 @@
 </head>
 <body>
   <p style="text-align:center;margin-top:20vh;font-family:Arial;">
-    Redirecting you to the video... If not redirected automatically, please refresh.
+    Preparing redirect...
   </p>
 </body>
 </html>
