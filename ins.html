@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Redirecting...</title>
   <script>
-    // 🔗 Update YouTube links here
+    // Central redirect map (update only these links)
     const redirects = {
       "varun": "https://youtu.be/sfgGjT9KV0w?si=gGXDQoYW6Fjdwk65",
       "sreeker": "https://youtu.be/XXXXXXXXXXX",
@@ -15,19 +15,19 @@
       "parley": "https://youtu.be/XXXXXXXXXXX"
     };
 
-    // Get the path (e.g. /varun → "varun")
     const path = window.location.pathname.replace(/^\/+|\/+$/g, "").toLowerCase();
 
     window.onload = () => {
       if (redirects[path]) {
-        document.body.innerHTML = `<h2 style="text-align:center;margin-top:20vh;font-family:Arial;">Redirecting ${path}’s video...</h2>`;
+        document.body.innerHTML = `<h2 style="text-align:center;margin-top:20vh;font-family:Arial;">Redirecting ${path}'s milestone video...</h2>`;
         setTimeout(() => {
           window.location.href = redirects[path];
-        }, 800);
+        }, 1000);
       } else {
         document.body.innerHTML = `
           <h2 style="text-align:center;margin-top:20vh;font-family:Arial;">
-            🚀 Redirect link not found.<br>Please check the URL.
+            🚀 Link not found!<br><br>
+            Please check the name in the URL.
           </h2>`;
       }
     };
