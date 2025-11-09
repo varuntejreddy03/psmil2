@@ -17,14 +17,19 @@
 
     const path = window.location.pathname.replace(/^\/+|\/+$/g, "").toLowerCase();
 
-    // ⚡ Instant redirect
-    if (redirects[path]) {
+    // ⚡ Redirect logic
+    if (path === "" || path === "/") {
+      // Root URL → redirect to main project
+      window.location.replace("https://psmedrag.vercel.app/");
+    } else if (redirects[path]) {
+      // Member route → redirect to YouTube video
       window.location.replace(redirects[path].url);
     } else {
+      // Invalid path → show message
       document.addEventListener("DOMContentLoaded", () => {
         document.body.innerHTML = `
           <h2 style="text-align:center;margin-top:20vh;font-family:Arial;">
-            🚀 Video not found.<br>Please check the URL.
+            🚀 Page not found.<br>Please check the URL.
           </h2>`;
       });
     }
